@@ -1,0 +1,10 @@
+
+* Plugin text format
+
+Use plugin artifact ID, without -plugin extension, and append the version if needed separated by :.
+
+* Reference
+
+https://github.com/jenkinsci/docker/blob/master/README.md
+
+
