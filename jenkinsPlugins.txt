@@ -25,7 +25,6 @@ lockable-resources
 branch-api
 ssh-slaves
 URLSCM
-pipeline-model-declarative-agent
 workflow-support
 durable-task
 command-launcher
