@@ -7,4 +7,9 @@ Use plugin artifact ID, without -plugin extension, and append the version if nee
 
 https://github.com/jenkinsci/docker/blob/master/README.md
 
+Dockerfile for jenkins/jenkins:alpine
+
+https://github.com/jenkinsci/docker/blob/master/Dockerfile-alpine
+
+https://hub.docker.com/layers/jenkins/jenkins/alpine/images/sha256-8bdba61498de08ee32b83b766d5c0ccb9df30da6d1197263e58d7486f3c5f909?context=explore
 
