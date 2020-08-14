@@ -1,4 +1,14 @@
 
+* Why this image
+
+jenkins/jenkins:alpine uses an old version of alpine, thus old version of ansible, which does't fit our swagger style.
+
+Features of this image:
+- Use the latest alpine as the base image.
+- Add ansible and docker, easy to deploy directly from the container.
+
+Contact me if you have any suggestions.
+
 * Plugin text format
 
 Use plugin artifact ID, without -plugin extension, and append the version if needed separated by :.

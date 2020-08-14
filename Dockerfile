@@ -16,9 +16,11 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
     unzip \
     jenkins \
     docker \
-    ansible
+    ansible \
+    sshpass &&\
 # todo: just install docker-cli and use /var/lib/docker.sock
 # These are needed by install-plugins: bash curl unzip
+  ln -s /usr/bin/python3 /usr/bin/python
 
 ARG user=jenkins
 ARG group=jenkins
