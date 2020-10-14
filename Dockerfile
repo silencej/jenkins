@@ -17,10 +17,12 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
     jenkins \
     docker \
     ansible \
+    py3-pip \
     sshpass &&\
 # todo: just install docker-cli and use /var/lib/docker.sock
 # These are needed by install-plugins: bash curl unzip
-  ln -s /usr/bin/python3 /usr/bin/python
+  ln -s /usr/bin/python3 /usr/bin/python &&\
+  pip install "pywinrm>=0.3.0"
 
 ARG user=jenkins
 ARG group=jenkins
