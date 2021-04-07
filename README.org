@@ -11,7 +11,20 @@ Contact me if you have any suggestions.
 
 * Plugin text format
 
+To get the list of the installed plugins:
+
+#+BEGIN_SRC bash
+curl -s -k "https://user:pass@jenkins.company.com/pluginManager/api/json?depth=1&order=as" | jq '.plugins[]|{shortName}' -c | cut -d: -f2 | cut -d\" -f2 | sort
+#+END_SRC
+
 Use plugin artifact ID, without -plugin extension, and append the version if needed separated by :.
+
+
+* How to build
+
+#+BEGIN_SRC bash
+docker build . 
+#+END_SRC
 
 * Reference
 
