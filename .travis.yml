@@ -1,0 +1,18 @@
+language: minimal
+
+services:
+  - docker
+
+install: skip
+
+env:
+  global:
+    - secure: "YjKZpswjCAdGmKW5zLJLUxJ/wmg2RluGuf60BCPnJtAvCtAS8P5HPZYt8amqW1QshL9PQWPbucZVAtts42faez720UT9EqSYSTSFZY7aJ6rpocukdsDGJBIwLe79V3edTFOhughHrtcit2Epa7PXIqgoCosOvxW0fZXsSosop6IHZPUCfzOrY0gMN0hEuVJqDXBI6V+JJ80FUtcTzboemnt5MS+7yS6WfyYmzcnXseDMlzownCt3f2wPZ88QmqPNEX33B4rrdc+6WTECUFzkPjQ9ejB0yCo4FNA+DYts2A4kkb53/Q6GDy/YGMSRvp2UW30+9Fu/zDwqs+b+nfz73VyXyFaRW7ZKMUwDe1ZNWdMicISXMK2fh9i+3PhiqvmsqwvtTaAT+q4k2+Nd5QLsOCYPE+A9Ac5/4NHKVWQI7l1CmHTJqihyGSzo7ebEb+0j9iHTi8oqY8y2xsAx/Vx0kxY6SwUF8CAuQC99CWCj6esydAncNtGAcfc+dvXzgl3DFwf2t3eOXdRSXiNIRBi6cNJIhnnt5z3v0IcvbHVRajEqBq1vOp5zNDXE6Elwm0ADrlmnXwKcT9C8gTMfYe2LsrGqKIBc/ZAApy7C43AMl4VQFB1TEOFZLiB/7fxbqQVK0CEG+IYCJNfLlqQNOqUJuFjBuimdhBtlPDlNrdQXIxQ="
+
+jobs:
+  include:
+  - stage: Build
+    script:
+    - docker build -t lazytechw/jenkins .
+    - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+    - docker push lazytechw/jenkins
