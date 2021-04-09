@@ -38,12 +38,13 @@ ENV JENKINS_HOME $JENKINS_HOME
 ENV JENKINS_SLAVE_AGENT_PORT ${agent_port}
 ENV REF $REF
 
-# wcfNote: apk add jenkins already create jenkins.
+# user and group jenkins already exist.
 # Jenkins is run with user `jenkins`, uid = 1000. If you bind mount a volume from the host or a data container, ensure you use the same uid
 # RUN mkdir -p $JENKINS_HOME \
 #   && chown ${uid}:${gid} $JENKINS_HOME \
 #   && addgroup -g ${gid} ${group} \
 #   && adduser -h "$JENKINS_HOME" -u ${uid} -G ${group} -s /bin/bash -D ${user}
+RUN mkdir -p $JENKINS_HOME
 
 # Jenkins home directory is a volume, so configuration and build history
 # can be persisted and survive image upgrades
